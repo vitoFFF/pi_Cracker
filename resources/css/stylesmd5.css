@@ -1,0 +1,82 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+nav {
+  background-color: #542a81;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav li {
+  margin-right: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #77ff00;
+}
+
+.container {
+  text-align: center;
+  margin-top: 1px; /* Adjust margin top */
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #542a81; /* Match the color to your navigation bar */
+}
+
+form {
+  display: inline-block; /* Align form elements horizontally */
+}
+
+input[type="text"],
+input[type="file"],
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #542a81;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#result {
+  text-align: center;
+  font-size: 18px;
+  color: #542a81;
+}

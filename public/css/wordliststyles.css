@@ -1,0 +1,95 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #f0f0f0;
+  }
+  
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  
+  
+  /* Checkbox style */
+  label {
+    margin-right: 10px;
+  }
+ 
+  
+  nav {
+    background-color: #542a81;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    height: 40px; /* Adjust the height as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+  }
+  
+  nav li {
+    margin-right: 2rem; /* Add margin to separate buttons */
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    color: #77ff00;
+  }
+  
+ 
+
+
+
+  /* Table Style */
+table {
+  width: 80%; /* Adjust the width as needed */
+  border-collapse: collapse;
+  margin: 20px auto; /* Center the table horizontally with some margin */
+  border: 2px solid #ccc; /* Add a border to the table */
+  background-color: #fff; /* Set a white background color */
+}
+
+/* Table Head Style */
+thead {
+  background-color: #542a81; /* Dark purple background color for the header */
+  color: #fff; /* White text color for header cells */
+}
+
+/* Table Head Cell Style */
+th {
+  padding: 100px; /* Add padding to header cells */
+}
+
+/* Table Body Style */
+tbody {
+  color: #333; /* Dark text color for table body */
+}
+
+/* Table Body Row Style */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Alternate row background color */
+}
+
+/* Table Body Cell Style */
+td {
+  padding: 10px; /* Add padding to table cells */
+  border: 1px solid #ccc; /* Add a border to table cells */
+}
