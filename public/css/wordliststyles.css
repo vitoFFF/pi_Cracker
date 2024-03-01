@@ -57,14 +57,14 @@ body {
  
 
 
-
-  /* Table Style */
+/* Table Style */
 table {
   width: 80%; /* Adjust the width as needed */
   border-collapse: collapse;
   margin: 20px auto; /* Center the table horizontally with some margin */
   border: 2px solid #ccc; /* Add a border to the table */
   background-color: #fff; /* Set a white background color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a box shadow for better visualization */
 }
 
 /* Table Head Style */
@@ -75,7 +75,8 @@ thead {
 
 /* Table Head Cell Style */
 th {
-  padding: 100px; /* Add padding to header cells */
+  padding: 15px; /* Add padding to header cells */
+  text-align: left; /* Align header text to the left */
 }
 
 /* Table Body Style */
@@ -90,6 +91,6 @@ tbody tr:nth-child(even) {
 
 /* Table Body Cell Style */
 td {
-  padding: 10px; /* Add padding to table cells */
+  padding: 15px; /* Add padding to table cells */
   border: 1px solid #ccc; /* Add a border to table cells */
 }

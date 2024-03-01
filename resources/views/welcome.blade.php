@@ -35,22 +35,25 @@
         .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #333; /* Dark background color */
-    color: blue; /* Light text color */
+    background-color: #333;
+    color: blue;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    border-radius: 15px; /* Border radius */
+    border-radius: 15px;
     padding: 10px;
-    top: 45px; /* Adjust the value to move the panel downward */
+    top: 65px;
 }
 
 .dropdown:hover .dropdown-content,
-.dropdown:focus .dropdown-content,
-.dropdown-content:hover,
-.dropdown-content:focus {
+.dropdown:focus-within .dropdown-content {
     display: block;
 }
+
+.dropdown-content a:hover {
+    background-color: blue;
+}
+
 
 
         .dropdown-content a {
@@ -60,10 +63,7 @@
             display: block;
         }
 
-        .dropdown-content a:hover {
-            background-color: blue;
-            
-        }
+ 
         .dropdown-content label {
             color: orange; /* Change label text color to white */
         }
@@ -92,7 +92,7 @@
                 <a href="#" onclick="changeCharArray('animals')">Animals</a>
                 <a href="#" onclick="changeCharArray('food')">Food</a>
                 <a href="#" onclick="changeCharArray('sport')">Sport</a>
-                <a href="#" onclick="changeCharArray('transport')">Transport</a>
+                <a href="#" onclick="changeCharArray('math')">Math</a>
             </div>
         </div>
 
@@ -176,8 +176,8 @@
                     return food;
                 case 'sport':
                     return sport;
-                case 'transport':
-                    return transport;
+                case 'math':
+                    return math;
                 default:
                     return custom;
             }
@@ -199,8 +199,8 @@
         const random = ['🌈 ', '🌀', '🌟', '🌌 ', '🎇', '🎆', '🎑', '🪐', '🌠', '🎨'];
         const animals = ['🐯', '🦁', '🐻', '🐺', '🦊', '🐱', '🐶', '🐮', '🐷', '🐸'];
         const food = ['🍕', '🍔', '🍟', '🍣', '🍦', '🍩', '🍪', '🍫', '🍉', '🍇'];
-        const sport = ['⚽', '🏀', '🏈', '⚾', '🎾', '🏐', '🏓', '🏸', '🏒', '🥊'];
-        const transport = ['🔫', '🗡️', '⚔️', '🪓', '🛡️', '🏹', '🗡️', '🪓', '🪃', '🛠️'];
+        const sport = ['😂', '😍', '👩‍🎓', '👨‍🎨', '👩‍🚒', '👩‍🍳', '👩‍⚖️', '🧕', '🧔', '👩‍🔧'];
+        const math = ['∑', '∫', '√', '∈', '∞', '≠', '≈', '∂', '∇', '±','∴', '⇒', '⇔', 'π', '∝', '∩','∬', '❤', '❄'];
 
         let fontSize = 15; // Initial font size
 
