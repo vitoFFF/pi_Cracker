@@ -14,6 +14,8 @@ body {
     font-size: 36px;
     margin-bottom: 20px;
   }
+
+
   
   input[type="text"] {
     padding: 12px 20px;
@@ -130,7 +132,7 @@ body {
   
   
   nav {
-    background-color: #542a81;
+    background-color: #212529;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 0.5rem;
     height: 40px; /* Adjust the height as needed */
@@ -172,3 +174,14 @@ body {
   .matchedWordsCount {
     color: #ffa30f; /* New color (red in this example) */
   }
+
+
+
+  #canv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensures canvas is behind other content */
+}
