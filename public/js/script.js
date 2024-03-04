@@ -4,6 +4,7 @@ document.querySelector('form').addEventListener('submit', async function(event) 
 
     // Get the search term from the input field
     const searchTerm = document.getElementById('searchTerm').value.toLowerCase();
+    
 
     // Get the selected file from the dropdown menu
     const selectedFile = document.getElementById('fileSelect').value;
@@ -41,9 +42,13 @@ document.querySelector('form').addEventListener('submit', async function(event) 
         // Count the total number of words in the file
         const totalWordsCount = words.length;
 
+     
+
         // Create HTML content for displaying matched words and count
-        let html = `<p class="matched-words">Number of matched words: <span class="matchedWordsCount">${matchedWordsCount}</span>/${totalWordsCount}</p>`;
+        let html = `<p class="matched-words">Number of matched words for  "${searchTerm}": <span class="matchedWordsCount">${matchedWordsCount}</span>/${totalWordsCount}</p>`;
+        
         html += `<ul>`;
+
 
         // Loop through the matched words and add them to the HTML content
         matchedWords.forEach(word => {
@@ -63,3 +68,4 @@ document.querySelector('form').addEventListener('submit', async function(event) 
     }
     
 });
+

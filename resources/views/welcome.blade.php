@@ -19,7 +19,6 @@
         nav {
             display: flex;
             justify-content: space-between;
-           
             position: fixed;
             background-color: #212529;
             padding: 0.5rem;
@@ -33,28 +32,26 @@
         }
 
         .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    color: blue;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 15px;
-    padding: 10px;
-    top: 65px;
-}
+            display: none;
+            position: absolute;
+            background-color: #333;
+            color: white; /* Changed text color to white */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 15px;
+            padding: 10px;
+            top: 65px;
+        }
 
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
-    display: block;
-}
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            display: block;
+        }
 
-.dropdown-content a:hover {
-    background-color: blue;
-}
-
-
+        .dropdown-content a:hover {
+            background-color: blue;
+        }
 
         .dropdown-content a {
             color: white; /* Change text color to white */
@@ -63,18 +60,21 @@
             display: block;
         }
 
- 
         .dropdown-content label {
-            color: orange; /* Change label text color to white */
+            color: orange; /* Change label text color to orange */
         }
 
-
         .dropbtn {
-            color: #abff4f; /* Change this to the desired text color */
+            color: #abff4f; /* Change text color to a bright green */
             background-color: transparent; /* Add this line to make the button transparent */
             border: none; /* Add this line to remove the border */
             cursor: pointer;
             font-weight: bold; /* Add this line to make the text bold */
+        }
+
+        /* Change font color to white for the matrix characters */
+        #canv {
+            color: white;
         }
     </style>
 </head>
@@ -82,7 +82,7 @@
 <body>
     <nav>
         <div class="dropdown">
-            <button class="dropbtn">Choose Matrix Style</button>
+            <button  class="dropbtn">Choose Matrix Style</button>
             <div class="dropdown-content">
                 <input type="range" min="5" max="30" value="25" id="sizeSlider" oninput="changeSize(this.value)">
                 <label for="sizeSlider">Adjust Size</label>
@@ -93,6 +93,18 @@
                 <a href="#" onclick="changeCharArray('food')">Food</a>
                 <a href="#" onclick="changeCharArray('sport')">Sport</a>
                 <a href="#" onclick="changeCharArray('math')">Math</a>
+            </div>
+        </div>
+
+        <!-- Color selector dropdown -->
+        <div class="dropdown">
+            <button id="matrixColorDropdownBtn" class="dropbtn">Choose Matrix Color</button>
+            <div class="dropdown-content" id="colorSelector">
+                <a href="#" onclick="changeColor('#0f0')" style="color: #0f0;">Green</a>
+                <a href="#" onclick="changeColor('#00f')" style="color: #00f;">Blue</a>
+                <a href="#" onclick="changeColor('#f00')" style="color: #f00;">Red</a>
+                <a href="#" onclick="changeColor('#ff0')" style="color: #ff0;">Yellow</a>
+                <a href="#" onclick="changeColor('#fff')" style="color: #fff;">White</a>
             </div>
         </div>
 
@@ -125,6 +137,7 @@
         let w, h, cols;
         const ypos = [];
         let selectedArray = 'custom'; // Default selected characters array
+        let matrixColor = '#0f0'; // Default matrix color
 
         function resizeCanvas() {
             w = canvas.width = window.innerWidth; // Set canvas width to window width
@@ -148,7 +161,7 @@
             ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
             ctx.fillRect(0, 0, w, h);
 
-            ctx.fillStyle = '#0f0';
+            ctx.fillStyle = matrixColor; // Use selected color
             ctx.font = `${fontSize}px monospace`; // Adjust the font size here
 
             const charArray = getCharArray(); // Get the selected characters array
@@ -193,6 +206,11 @@
             fontSize = parseInt(value);
         }
 
+        // Function to change the matrix color
+        function changeColor(color) {
+            matrixColor = color;
+        }
+
         // Custom characters array
         const custom = ['❤', '☀', '$', '⭐', '⚡', '⚛', '⚘', '⚔', '✨', '❄'];
         const planets = ['🪐', '🌌', '🌠', '🌟', '☄️', '💫', '🌍', '🌎', '🌏', '🌕'];
@@ -203,6 +221,19 @@
         const math = ['∑', '∫', '√', '∈', '∞', '≠', '≈', '∂', '∇', '±','∴', '⇒', '⇔', 'π', '∝', '∩','∬', '❤', '❄'];
 
         let fontSize = 15; // Initial font size
+        // Function to change the matrix color
+        function changeColor(color) {
+            matrixColor = color;
+            updateDropdownTextColor(color);
+        }
+
+        // Function to update the text color of the dropdown button based on the selected color
+        function updateDropdownTextColor(color) {
+            const dropDownButton = document.getElementById('matrixColorDropdownBtn');
+            dropDownButton.style.color = color;
+        }
+
+        
 
         // Initialize
         init();
